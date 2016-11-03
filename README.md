@@ -1,6 +1,7 @@
 # NCGraph
 [![release](https://img.shields.io/badge/pod-v1.0.1-blue.svg)](https://img.shields.io/badge/pod-v1.0.1-blue.svg)
 [![release](https://img.shields.io/badge/platforms-iOS%208.0%2B%20%7C%20macOS%2010.10%2B%20%7C%20tvOS%209.0%2B-lightgrey.svg)](https://img.shields.io/badge/platforms-iOS%208.0%2B%20%7C%20macOS%2010.10%2B%20%7C%20tvOS%209.0%2B-lightgrey.svg)
+[![release](https://img.shields.io/badge/Swift-3-orange.svg)](https://img.shields.io/badge/Swift-3-orange.svg)
 
 Graph data structure written in Swift 3 using protocol oriented programming technics.
 
