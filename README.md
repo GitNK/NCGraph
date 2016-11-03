@@ -34,21 +34,21 @@ $ gem install cocoapods
 ```
 #### Podfile
 
-From terminal go to your project directory and run following:
+To integrate NCGraph into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ``` bash
-$ pod init
-```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :osx, '10.10'
+use_frameworks!
 
-Open newly created podfile and add following below `# Pods for YOUR_PROJECT_NAME`:
-
-```ruby
-pod 'NCGraph', :git => 'https://github.com/GitNK/NCGraph.git', :tag => '1.0.0'
+target 'PodTest' do
+pod 'NCGraph', '~> 1.0'
+end
 ```
 Then, run the following command:
 
 ```bash
-$ pod update
+$ pod install
 ```
 
 ### Manually
@@ -81,7 +81,7 @@ $ git submodule add https://github.com/GitNK/NCGraph.git
 
     > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `NCGraph.framework`.
 
-- Select the top `NCGraph.framework` for iOS.
+- Select the top `NCGraph.framework` for iOS (or platform that you need).
 
 - And that's it!
 
@@ -225,6 +225,13 @@ public protocol NCEdgeProtocol {
 ```
 
 Or if you don't need custom classes you can use already implemented default classes: `NCNode`, `NCEdge`
+
+## Release History
+
+* 1.0.1
+    * Added support for macOS and tvOS
+* 1.0.0
+    * Initial release
 
 ## License
 NCGraph is released under the MIT license. See LICENSE for details.
