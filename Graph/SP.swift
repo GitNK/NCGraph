@@ -135,7 +135,7 @@ extension NCGraph {
             return spNode
         })
         /// shuffle nodes
-        if #available(iOS 9.0, *) {
+        if #available(iOS 9.0, *), #available(OSX 10.11, *) {
             inputNodes = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: inputNodes) as! [SPNode]
         } else {
             // Fallback on earlier versions
