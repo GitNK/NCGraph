@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  Graph data structure with common algorithms for topological sorting, shortest path etc. Written in pure Swift 3.
+  Graph data structure with common algorithms for topological sorting, shortest path etc. Written in pure Swift 4.
                    DESC
 
   s.homepage     = "https://github.com/GitNK/NCGraph"
