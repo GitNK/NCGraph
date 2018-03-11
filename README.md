@@ -228,7 +228,8 @@ public protocol NCEdgeProtocol {
 Or if you don't need custom classes you can use already implemented default classes: `NCNode`, `NCEdge`
 
 ## Release History
-
+* 1.0.2
+    * Updated to Swift 4
 * 1.0.1
     * Added support for macOS and tvOS
 * 1.0.0
