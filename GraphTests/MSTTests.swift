@@ -43,7 +43,7 @@ class MSTTests: XCTestCase {
         
         self.measure {
             
-            XCTAssertEqual(self.sut.mst(using: .primms)?.reduce(0){$0 + $1.weight}, -3612829)
+            XCTAssertEqual(self.sut.mst(using: .primms)?.reduce(0){ $0 + $1.weight }, -3612829)
         }
     }
     
@@ -59,7 +59,7 @@ class MSTTests: XCTestCase {
         
         let mst = testGraph.mst(using: .kruskals)
         
-        XCTAssertEqual(mst?.reduce(0){$0 + $1.weight} , 7)
+        XCTAssertEqual(mst?.reduce(0){ $0 + $1.weight } , 7)
         XCTAssertEqual(mst?.count, 3)
     }
 
@@ -68,9 +68,8 @@ class MSTTests: XCTestCase {
         sut = loadNCGraph(form: .negWeighted, isDirected: false, allowParallel: true)
         self.measure {
             
-            let score = self.sut.mst(using: .kruskals)?.reduce(0){$0 + $1.weight}
+            let score = self.sut.mst(using: .kruskals)?.reduce(0){ $0 + $1.weight }
             XCTAssertEqual(score, -3612829)
         }
     }
-        
 }

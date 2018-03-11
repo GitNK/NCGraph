@@ -36,7 +36,14 @@ class DFSTests: XCTestCase {
             fatalError()
         }
         
-        XCTAssertTrue(sorted == [NCNode(name:"s"),NCNode(name:"w"), NCNode(name:"v"), NCNode(name:"t")] || sorted == [NCNode(name:"s"),NCNode(name:"v"), NCNode(name:"w"), NCNode(name:"t")] )
+        XCTAssertTrue(sorted == [NCNode(name:"s"),
+                                 NCNode(name:"w"),
+                                 NCNode(name:"v"),
+                                 NCNode(name:"t")]
+            || sorted == [NCNode(name:"s"),
+                          NCNode(name:"v"),
+                          NCNode(name:"w"),
+                          NCNode(name:"t")])
     }
     
     func testTopSort_ShouldReturnTopSorted2() {

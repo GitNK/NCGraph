@@ -52,7 +52,6 @@ class SPTests: XCTestCase {
     
     func testDijkstraSP_OnDegativeEdgeGraphShouldReturn_Nil() {
         
-        
         XCTAssertTrue(sut.addEdgeWith(tailName: "1", headName: "2", weight: -10))
         XCTAssertTrue(sut.addEdgeWith(tailName: "2", headName: "3", weight: 2))
         XCTAssertTrue(sut.addEdgeWith(tailName: "3", headName: "4", weight: 3))
@@ -61,8 +60,6 @@ class SPTests: XCTestCase {
         XCTAssertTrue(sut.addEdgeWith(tailName: "3", headName: "5", weight: 7))
         
         XCTAssertNil(sut.spFrom(source: NCNode(name: "1"), algorithm: .dijkstra))
-        
-        
     }
     
     func testDijkstraPerformanceOnBigGraph() {
@@ -88,19 +85,17 @@ class SPTests: XCTestCase {
             let sp_10 = spMap?["197"]
             
             
-            XCTAssertEqual(sp_1?.reduce(0){$0 + $1.weight}, 2599)
-            XCTAssertEqual(sp_2?.reduce(0){$0 + $1.weight}, 2610)
-            XCTAssertEqual(sp_3?.reduce(0){$0 + $1.weight}, 2947)
-            XCTAssertEqual(sp_4?.reduce(0){$0 + $1.weight}, 2052)
-            XCTAssertEqual(sp_5?.reduce(0){$0 + $1.weight}, 2367)
-            XCTAssertEqual(sp_6?.reduce(0){$0 + $1.weight}, 2399)
-            XCTAssertEqual(sp_7?.reduce(0){$0 + $1.weight}, 2029)
-            XCTAssertEqual(sp_8?.reduce(0){$0 + $1.weight}, 2442)
-            XCTAssertEqual(sp_9?.reduce(0){$0 + $1.weight}, 2505)
-            XCTAssertEqual(sp_10?.reduce(0){$0 + $1.weight}, 3068)
+            XCTAssertEqual(sp_1?.reduce(0){ $0 + $1.weight }, 2599)
+            XCTAssertEqual(sp_2?.reduce(0){ $0 + $1.weight }, 2610)
+            XCTAssertEqual(sp_3?.reduce(0){ $0 + $1.weight }, 2947)
+            XCTAssertEqual(sp_4?.reduce(0){ $0 + $1.weight }, 2052)
+            XCTAssertEqual(sp_5?.reduce(0){ $0 + $1.weight }, 2367)
+            XCTAssertEqual(sp_6?.reduce(0){ $0 + $1.weight }, 2399)
+            XCTAssertEqual(sp_7?.reduce(0){ $0 + $1.weight }, 2029)
+            XCTAssertEqual(sp_8?.reduce(0){ $0 + $1.weight }, 2442)
+            XCTAssertEqual(sp_9?.reduce(0){ $0 + $1.weight }, 2505)
+            XCTAssertEqual(sp_10?.reduce(0){ $0 + $1.weight }, 3068)
         }
-        
-        
     }
     
     func testBellmanFordPerformanceOnBigGraph() {
@@ -110,8 +105,6 @@ class SPTests: XCTestCase {
         self.measure {
             XCTAssertNotNil(self.sut.spFrom(source: NCNode(name: "48"), algorithm: .bellmanFord))
         }
-        
-        
     }
     
     func testBellmanFord_ShouldCalculateNegativeEdgeGraphSPs() {
@@ -130,7 +123,7 @@ class SPTests: XCTestCase {
         
         let sp = sut.spFrom(source: NCNode(name: "0"), algorithm: .bellmanFord)
         
-        XCTAssertEqual(sp?["6"]!.reduce(0){$0 + $1.weight}, -1)
+        XCTAssertEqual(sp?["6"]!.reduce(0){ $0 + $1.weight }, -1)
     }
     
     func testBellmanFordPerformanceOnBiggerGraph() {
@@ -169,7 +162,6 @@ class SPTests: XCTestCase {
     
     //# MARK: - Johnsons ASSP tests
     
-    
     func testJohnsons_ShouldComputeASSP() {
         
         XCTAssertTrue(sut.addEdgeWith(tailName: "1", headName: "2", weight: -2))
@@ -183,8 +175,7 @@ class SPTests: XCTestCase {
         
         let spMap = self.sut.assp()!
         XCTAssertNotNil(spMap)
-        XCTAssertEqual(spMap["1"]?["4"]?.reduce(0){$0 + $1.weight}, -6)
-        
+        XCTAssertEqual(spMap["1"]?["4"]?.reduce(0){ $0 + $1.weight }, -6)
     }
     
     func testJohnsonsNegativeCycleDetectPerformance() {

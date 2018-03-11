@@ -8,10 +8,11 @@
 
 import Foundation
 
+
 /**
  Class for node object.
  Open class used in Graph ADT.
- `Node` object represents Node in
+ `Node` object represents a Node in
  directed or undirected graph.
  */
 public final class NCNode: NCNodeProtocol, Hashable {

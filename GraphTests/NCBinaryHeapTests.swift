@@ -29,7 +29,6 @@ class BinaryHeapTests: XCTestCase {
         XCTAssertEqual(heap.count, 0)
     }
     
-    
     func testPush_AfterAddingOneItem_IsOne() {
         
         sut.push(1)
@@ -108,7 +107,7 @@ class BinaryHeapTests: XCTestCase {
         }
         print("Before delete: \(sut.description())")
         XCTAssertTrue((sut.remove(at: sut.indexOf(3)!) != nil))
-        XCTAssertEqual(sut.count, (1...10).count-1)
+        XCTAssertEqual(sut.count, (1...10).count - 1)
         print("After delete: \(sut.description())")
     }
     
@@ -122,7 +121,6 @@ class BinaryHeapTests: XCTestCase {
             poppedArray.append(sut.pop()!)
         }
         XCTAssertEqual(Array<Int>(1...100), poppedArray)
-    
     }
     
     func testSutPerformance_AddingBigArray() {

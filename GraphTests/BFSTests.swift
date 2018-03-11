@@ -19,7 +19,6 @@ class BFSTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -35,7 +34,6 @@ class BFSTests: XCTestCase {
         XCTAssertTrue(sut.addEdgeWith(tailName: "d", headName: "e", weight: 0))
         
         XCTAssertEqual(sut.numOfHops(from: NCNode(name: "s"), to: NCNode(name: "e")), 3)
-        
     }
     
     func testCC_ShoudReturnConnectedComponents() {
@@ -51,7 +49,6 @@ class BFSTests: XCTestCase {
         
         XCTAssertEqual(sut.connectedComponents()?.count, 1)
         XCTAssertTrue(sut.isConnected)
-        
     }
     
     func testCC_ShoudReturnConnectedComponents2() {
@@ -85,5 +82,4 @@ class BFSTests: XCTestCase {
             XCTAssertTrue(self.sut.isConnected)
         }
     }
-    
 }

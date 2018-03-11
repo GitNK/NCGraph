@@ -28,5 +28,4 @@ class ClusteringTests: XCTestCase {
         XCTAssertEqual(self.sut.nodeCount, 500)
         XCTAssertEqual(self.sut.kClusteringMaxSpacing(k: 4), 106)
     }
-    
 }

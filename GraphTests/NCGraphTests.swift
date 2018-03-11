@@ -23,9 +23,7 @@ class GraphTests: XCTestCase {
         super.tearDown()
     }
     
-    //# Mark: - Edge tests
-    
-    
+    // MARK: - Edge tests
     
     func testEdge_ShouldSetEdgeWeight() {
         
@@ -190,9 +188,6 @@ class GraphTests: XCTestCase {
         sut.addEdgesFrom(array:[edge_1,edge_2,edge_3, edge_4, edge_5, edge_6])
         sut.removeAll()
         XCTAssertTrue(sut.isEmpty)
-        
-        
-        
     }
     
     func testAddEdge_ShouldAddEdgeWIthNodesTitle() {
@@ -215,7 +210,6 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(sut.nodeCount, 4)
         XCTAssertEqual(sut.weight, 15)
     }
-    
     
     func testSut_ShouldReturnExistingEdges() {
         
@@ -243,7 +237,6 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(getEdge_1, edge_1)
         XCTAssertEqual(getEdge_5, edge_5)
         XCTAssertNil(sut.getEdgeWith(tailName: "1", headName: "2"))
-        
     }
     
 
@@ -276,7 +269,6 @@ class GraphTests: XCTestCase {
         removedEdges = sut.removeEdgesWith(tailName: "2", headName: "1")
         XCTAssertEqual(removedEdges!, [edge_4])
         XCTAssertFalse(sut.containsEdge(edge_4))
-        
     }
     
     func testRemoveEdgesWith_ShouldRemoveAllEdgesBetweenNodes_forUndirectedGraph() {
@@ -306,7 +298,6 @@ class GraphTests: XCTestCase {
         XCTAssertFalse(sut.containsEdge(edge_1))
         XCTAssertFalse(sut.containsEdge(edge_4))
         XCTAssertNil(sut.removeEdgesWith(tailName: "2", headName: "1"))
-        
     }
     
     func testRemoveEdge_ShouldRemoveExistingEdge() {
@@ -343,7 +334,6 @@ class GraphTests: XCTestCase {
         
     }
     
-    
     //# MARK: - Test directed graph
     
     func testInOutDegree_ShouldReturnInOutDegreeEdges() {
@@ -378,8 +368,6 @@ class GraphTests: XCTestCase {
         sut.addEdgesFrom(array:[edge_1,edge_2,edge_3, edge_4, edge_5, edge_6])
         
         XCTAssertTrue(sut.isComplete)
-        
-        
     }
     
     func testIsComplete_ShouldReturnFalseOnNonCompleteDigraph() {
@@ -397,8 +385,6 @@ class GraphTests: XCTestCase {
         sut.addEdgesFrom(array:[edge_1,edge_2,edge_3, edge_4, edge_5])
         
         XCTAssertFalse(sut.isComplete)
-        
-        
     }
     
     // MARK: - Test unirected graph
@@ -458,7 +444,4 @@ class GraphTests: XCTestCase {
             XCTAssertTrue(self.sut.isComplete)
         }
     }
-    
-    
-    
 }

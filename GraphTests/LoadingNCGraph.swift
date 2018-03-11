@@ -76,7 +76,6 @@ extension XCTestCase {
             })
         }
     }
-    
 }
 
 public enum GraphForm {

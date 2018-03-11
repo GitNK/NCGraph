@@ -85,12 +85,17 @@ class NCUnionFindTests: XCTestCase {
         let clusterNode7 = ClusterNode(node: 7, id: 7, rank: 3, leader: 7)
         
         var union = NCUnionFind(inputNodes: [0,1,2,3,4,5,6,7])
-        union.clusters = [clusterNode0, clusterNode1, clusterNode2, clusterNode3, clusterNode4,
-                          clusterNode5, clusterNode6, clusterNode7]
+        union.clusters = [clusterNode0,
+                          clusterNode1,
+                          clusterNode2,
+                          clusterNode3,
+                          clusterNode4,
+                          clusterNode5,
+                          clusterNode6,
+                          clusterNode7]
         
         XCTAssertEqual(union.find(clusterID: 1)?.id, 7)
         XCTAssertEqual(clusterNode1.leader, 7)
         XCTAssertEqual(clusterNode4.leader, 7)
     }
-    
 }

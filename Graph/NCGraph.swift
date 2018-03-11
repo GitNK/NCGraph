@@ -25,7 +25,7 @@ public protocol NCNodeProtocol: Comparable {
 /// Protocol for custom `Edge` types that can be used in `NCGraph`
 public protocol NCEdgeProtocol {
     
-    associatedtype NodeType:NCNodeProtocol
+    associatedtype NodeType: NCNodeProtocol
     
     var tail: NodeType {get}
     var head: NodeType {get}
@@ -51,13 +51,13 @@ public protocol NCEdgeProtocol {
  
  
  */
-public struct NCGraph<NodeType:NCNodeProtocol, EdgeType:NCEdgeProtocol>
+public struct NCGraph<NodeType, EdgeType: NCEdgeProtocol>
     where NodeType: Hashable,
     EdgeType: Comparable,
     EdgeType.NodeType == NodeType
 {
     /// Type of the `node`'s name
-    typealias Name = NodeType.Name
+    public typealias Name = NodeType.Name
     /// array of edges in `self`
     private var _edges: [EdgeType]
     /// dictionary of container nodes

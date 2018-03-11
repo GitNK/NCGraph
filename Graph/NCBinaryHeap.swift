@@ -51,7 +51,7 @@ public struct NCBinaryHeap<Element:Comparable> {
         
         let min = heap[0]
         if heap.count > 1 {
-            swap(&heap[0], &heap[heap.count-1])
+            heap.swapAt(0, heap.count-1)
         }
         heap.removeLast()
         bubbleDown(0)
@@ -73,7 +73,7 @@ public struct NCBinaryHeap<Element:Comparable> {
         if index == heap.count-1 {
             heap.removeLast()
         } else {
-            swap(&heap[index], &heap[heap.count-1])
+            heap.swapAt(index, heap.count-1)
             heap.removeLast()
             heapifyFrom(index: index/2)
         }
@@ -93,7 +93,7 @@ public struct NCBinaryHeap<Element:Comparable> {
         }
         let parentIdx = (index - 1) / 2
         if heap[index] < heap[parentIdx] {
-            swap(&heap[index], &heap[parentIdx])
+            heap.swapAt(index, parentIdx)
             bubbleUp(parentIdx)
         }
     }
@@ -101,20 +101,18 @@ public struct NCBinaryHeap<Element:Comparable> {
     private mutating func bubbleDown(_ index: Int){
         
         let n = heap.count
-        
         let leftChildIdx = 2 * index + 1
         let rightChildIdx = 2 * index + 2
         
-        
-        if leftChildIdx <= n-1 {
+        if leftChildIdx <= n - 1 {
             var m: Int
-            if rightChildIdx > n-1 || heap[leftChildIdx] <= heap[rightChildIdx]{
+            if rightChildIdx > n - 1 || heap[leftChildIdx] <= heap[rightChildIdx]{
                 m = leftChildIdx
             } else {
                 m = rightChildIdx
             }
             if heap[index] > heap[m] {
-                swap(&heap[index], &heap[m])
+                heap.swapAt(index, m)
                 bubbleDown(m)
             }
         }
@@ -129,5 +127,4 @@ public struct NCBinaryHeap<Element:Comparable> {
         }
         bubbleDown(index)
     }
-    
 }

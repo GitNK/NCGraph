@@ -6,8 +6,7 @@
 //  Copyright © 2016 Nikita Gromadskyi. All rights reserved.
 //
 
-#import <Foundation/NSObject.h>
-#import <Foundation/NSDate.h>
+#import <UIKit/UIKit.h>
 
 //! Project version number for Graph.
 FOUNDATION_EXPORT double GraphVersionNumber;
